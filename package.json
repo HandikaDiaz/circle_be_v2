@@ -4,9 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc",
+    "build": "prisma generate && tsc",
     "start": "node dist/server.js",
-    "dev": "nodemon server.ts"
+    "dev": "nodemon server.ts",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",

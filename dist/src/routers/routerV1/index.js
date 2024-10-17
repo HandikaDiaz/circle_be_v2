@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = __importDefault(require("./children/auth"));
+const thread_1 = __importDefault(require("./children/thread"));
+const profile_1 = __importDefault(require("./children/profile"));
+const user_1 = __importDefault(require("./children/user"));
+const like_1 = __importDefault(require("./children/like"));
+const follow_1 = __importDefault(require("./children/follow"));
+const routerV1 = (0, express_1.Router)();
+routerV1.use('/auth', auth_1.default);
+routerV1.use('/thread', thread_1.default);
+routerV1.use('/profile', profile_1.default);
+routerV1.use('/user', user_1.default);
+routerV1.use('/like', like_1.default);
+routerV1.use('/follow', follow_1.default);
+exports.default = routerV1;
